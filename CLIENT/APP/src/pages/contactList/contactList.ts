@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CoinServiceProvider } from '../../providers/coin-service/coin-service';
 import { ContactDetailPage} from '../contactDetail/contactDetail';
+import { AddContactPage } from '../add-contact/add-contact';
 /**
  * Generated class for the ContactsPage page.
  *
@@ -36,6 +37,11 @@ export class ContactListPage {
     this.navCtrl.push(ContactDetailPage, {
         contactId: contactId
     });
+  }
+
+  addContact()
+  {
+     this.navCtrl.push(AddContactPage);
   }
 }
 

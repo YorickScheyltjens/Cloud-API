@@ -68,4 +68,15 @@ export class CoinServiceProvider {
     });
   }
 
+  addContact(data) { 
+    return new Promise((resolve, reject) => { 
+      this.http.post('http://localhost:5000/api/v1/contacts/', JSON.stringify(data)) 
+        .subscribe(res => { 
+          resolve(res); 
+        }, err => { 
+          console.log(err) 
+        }); 
+    }); 
+  }
+
 }
