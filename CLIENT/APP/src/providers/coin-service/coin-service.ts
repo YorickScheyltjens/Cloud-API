@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ICryptoList, IGlobal } from '../../pages/cryptoList/cryptoList';
 import { ICryptoDetail } from '../../pages/cryptoDetail/cryptoDetail';
@@ -69,8 +69,11 @@ export class CoinServiceProvider {
   }
 
   addContact(data) { 
+    const header = new HttpHeaders({
+      "Content-type" : "application/json"
+    });
     return new Promise((resolve, reject) => { 
-      this.http.post('http://localhost:5000/api/v1/contacts/', JSON.stringify(data)) 
+      this.http.post('http://localhost:5000/api/v1/contacts/', data, {headers: header}) 
         .subscribe(res => { 
           resolve(res); 
         }, err => { 

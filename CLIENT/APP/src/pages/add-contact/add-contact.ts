@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CoinServiceProvicer, CoinServiceProvider} from '../../providers/coin-service/coin-service';
+import { CoinServiceProvider} from '../../providers/coin-service/coin-service';
+import { ContactListPage } from '../../pages/contactList/contactList';
 
 /**
  * Generated class for the AddContactPage page.
@@ -33,10 +34,7 @@ export class AddContactPage {
     this.coinProvider.addContact(JSON.stringify(this.contact))
     .then(data=> 
     {
-        if(data=="true")
-        {
-
-        }      
+        this.navCtrl.push(ContactListPage);     
     })
   }
 
