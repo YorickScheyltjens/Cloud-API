@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+          <ion-title>
+                  Home
+          </ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<ion-grid *ngIf="global">
+    <ion-row>
+      <ion-col>
+        <ion-card class="card" ion-item>
+          <ion-card-content>
+            <span>Active Cryptocurrencies:{{global.data.active_cryptocurrencies}}</span>
+            <span><br>Active Markets: {{global.data.active_markets}}</span>
+            <span><br>Bitcoin Percentage of Market Cap: {{global.data.bitcoin_percentage_of_market_cap}}</span>
+            <span><br>Total Market : {{global.data.quotes.EUR.total_market_cap}}</span>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-1>Name</ion-col>
+      <ion-col col-2>Afkorting</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list *ngIf="list">
+    <ion-grid>
+      <button ion-item (click)="openDetail(item.id)" *ngFor="let item of list.data">
+        <ion-row>
+          <ion-col col-4>
+            {{item.name}}
+          </ion-col>
+          <ion-col col-4>
+            {{item.symbol}}
+          </ion-col>
+        </ion-row>
+      </button>
+    </ion-grid>
+  </ion-list>
+</ion-content>

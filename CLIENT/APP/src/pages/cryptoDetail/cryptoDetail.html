@@ -1,0 +1,39 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid *ngIf="details">
+    <ion-row>
+      <ion-col>
+        <ion-card class="card" ion-item>
+          <ion-card-content>
+            <span>Name:{{details.data.name}}</span>
+            <span><br>Symbol: {{details.data.symbol}}</span>
+            <span><br>Circulating Supply: {{details.data.circulating_supply}}</span>
+            <span><br>Total Supply: {{details.data.total_supply}}</span>
+            <span><br>Max Supply: {{details.data.max_supply}}</span>
+            <span><br>Price: {{details.data.quotes.EUR.price}}</span>
+            <span><br>Market Cap: {{details.data.quotes.EUR.market_cap}}</span>
+            <span><br>Percent change 1h: {{details.data.quotes.EUR.percent_change_1h}}</span>
+            <span><br>Percent change 24h: {{details.data.quotes.EUR.percent_change_24h}}</span>
+            <span><br>Percent change 7d: {{details.data.quotes.EUR.percent_change_7d}}</span>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
