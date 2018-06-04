@@ -18,6 +18,7 @@ import { ContactDetailPage } from '../pages/contactDetail/contactDetail';
 import { AngularFireModule } from 'angularfire2';
 import { FIREBASE_CONFIG } from './app.firebase.config';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AddContactPage } from '../pages/add-contact/add-contact';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     CryptoListPage,
     ContactListPage,
     ContactDetailPage,
-    LoginPage
+    LoginPage,
+    AddContactPage
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     CryptoListPage,
     ContactListPage,
     ContactDetailPage,
-    LoginPage
+    LoginPage,
+    AddContactPage
   ],
   providers: [
     StatusBar,

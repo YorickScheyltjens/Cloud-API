@@ -17,21 +17,24 @@
     <form (ngSubmit)="logForm()">
         <ion-item>
           <ion-label>Name</ion-label>
-          <ion-input type="text" [(ngModel)]="contact.name" name="name"></ion-input>
+          <ion-input type="text" [(ngModel)]="contact.Name" name="Name"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label>First Name</ion-label>
-          <ion-textarea [(ngModel)]="contact.firstName" name="firstName"></ion-textarea>
+          <ion-input type="text" [(ngModel)]="contact.FirstName" name="FirstName"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label>Age</ion-label> 
-            <ion-textarea [(ngModel)]="contact.age" name="age"></ion-textarea>
+            <ion-input type="text" [(ngModel)]="contact.Age" name="Age"></ion-input>
         </ion-item>
-        <ion-label>Gender</ion-label>
-        <ion-select [(ngModel)]="contact.gender">
-          <ion-option value="female">Female</ion-option>
-          <ion-option value="male">Male</ion-option>
-        </ion-select>
+        <ion-item>
+          <ion-label>Gender</ion-label>
+          <ion-select  [(ngModel)]="contact.Gender" name="gender">
+            <ion-option value="female">Female</ion-option>
+            <ion-option value="male">Male</ion-option>
+          </ion-select>
+        </ion-item>
+
         <button ion-button type="submit" block>Add Contact</button>
       </form>
 </ion-content>
